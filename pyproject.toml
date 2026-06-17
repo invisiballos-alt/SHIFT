@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "meeting-room-service"
+version = "0.1.0"
+description = "Сервис бронирования переговорных комнат с PostgreSQL"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = "^0.28.0"
+sqlalchemy = "^2.0.28"
+asyncpg = "^0.29.0"
+pydantic-settings = "^2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.0"
+pytest-asyncio = "^0.23.5"
+httpx = "^0.27.0"
+aiosqlite = "^0.20.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
