@@ -24,6 +24,9 @@ async def db_engine():
 @pytest.fixture
 async def db_session(db_engine):
     async_session = async_sessionmaker(bind=db_engine, class_=AsyncSession, expire_on_commit=False)
-    async with async_session() as session:
+    session = async_session()
+    try:
         yield session
+    finally:
         await session.rollback()
+        await session.close()
